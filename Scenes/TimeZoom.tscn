@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgoa5ywctduxm"]
+
+[ext_resource type="Script" uid="uid://2fbg657si027" path="res://Code/TimeZoom.gd" id="1_kdwbw"]
+
+[node name="TimeZoom" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kdwbw")
+
+[node name="Less" type="Button" parent="."]
+layout_mode = 2
+text = " < "
+
+[node name="State" type="Button" parent="."]
+layout_mode = 2
+theme_type_variation = &"SubButton"
+text = "○"
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Zoom" type="Label" parent="MainPanel/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "x 1.0"
+
+[node name="Fast" type="Button" parent="."]
+layout_mode = 2
+text = " > "
+
+[connection signal="pressed" from="Less" to="." method="WhenLessButtonClicked"]
+[connection signal="pressed" from="State" to="." method="WhenStateButtonClicked"]
+[connection signal="pressed" from="Fast" to="." method="WhenFastButtonClicked"]

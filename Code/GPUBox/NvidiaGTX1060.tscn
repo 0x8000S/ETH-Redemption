@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://47p4lxjrcl6d"]
+
+[ext_resource type="Script" uid="uid://8cxfam2181rv" path="res://Code/GpuCard.gd" id="1_6tvaw"]
+
+[node name="NV GTX 1060" type="Node"]
+script = ExtResource("1_6tvaw")
+Model = "Nvidia GTX 1060"
+BaseHashrate = 23.5
+DefaultPower = 130
+MaxQuality = 0.8
+MinQuality = 0.5
+CoreBoost = 1506
+MenBoost = 8000
+Vram = 6
+MarketPrice = 550

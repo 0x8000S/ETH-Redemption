@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsfbsfq5l4bg3"]
+
+[ext_resource type="Script" uid="uid://8cxfam2181rv" path="res://Code/GpuCard.gd" id="1_sn28g"]
+
+[node name="Nvidia RTX 3060TI LHR" type="Node"]
+script = ExtResource("1_sn28g")
+Model = "Nvidia RTX 3060TI LHR"
+BaseHashrate = 42.5
+DefaultPower = 125
+MaxQuality = 0.95
+MinQuality = 0.75
+CoreBoost = 1777
+MenBoost = 14000
+Vram = 8
+VramType = 2
+LHR = true
+MarketPrice = 1800

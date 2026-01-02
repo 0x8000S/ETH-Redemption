@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=3 uid="uid://boxqa4tpeslwf"]
+
+[ext_resource type="Script" uid="uid://b2vs7g2py24wi" path="res://Code/GPUItem.gd" id="1_y2krf"]
+
+[node name="GPUItem" type="PanelContainer"]
+offset_right = 200.0
+offset_bottom = 66.0
+script = ExtResource("1_y2krf")
+
+[node name="Editing" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+color = Color(0.23921569, 0.53333336, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="GPUNAME" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "GPU NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PickUP" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "装载"
+
+[node name="Edit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "编辑"
+
+[node name="Sell" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "售卖"
+
+[node name="Fix" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "修复"
+
+[node name="ChangeBIOSHC" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Buy" type="Button" parent="MarginContainer/VBoxContainer/ChangeBIOSHC"]
+layout_mode = 2
+text = "解锁(￥200)"
+
+[node name="Cancel" type="Button" parent="MarginContainer/VBoxContainer/ChangeBIOSHC"]
+layout_mode = 2
+theme_type_variation = &"SubButton"
+text = "不了"
+
+[node name="ChangeBIOS" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "修改BIOS"
+
+[node name="Error" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(40, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+color = Color(1, 0.15686275, 0.28627452, 1)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PickUP" to="." method="WhenPickUpButtonClicked"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Edit" to="." method="WhenEditButtonClicked"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Sell" to="." method="WhenSellButtonClicked"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Fix" to="." method="WhenFixButtonClicked"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ChangeBIOSHC/Buy" to="." method="WhenBuyBIOSButtonClicked"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ChangeBIOSHC/Cancel" to="." method="WhenLHRCancelButtonClicked"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ChangeBIOS" to="." method="WhenChangedBIOSButtonClicked"]

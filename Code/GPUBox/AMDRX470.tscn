@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://prmr0pcn5jxk"]
+
+[ext_resource type="Script" uid="uid://8cxfam2181rv" path="res://Code/GpuCard.gd" id="1_lngps"]
+
+[node name="AMD RX470 - 4G" type="Node"]
+script = ExtResource("1_lngps")
+Model = "AMD RX 470"
+BaseHashrate = 22.5
+DefaultPower = 120
+MaxQuality = 0.8
+MinQuality = 0.45
+CoreBoost = 1206
+MenBoost = 7000
+Vram = 4
+MarketPrice = 350

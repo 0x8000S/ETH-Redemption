@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://b48w0pn7ah1s5"]
+
+[ext_resource type="Script" uid="uid://birdeqg2kgw8c" path="res://Test/time_test.gd" id="1_h8e58"]
+
+[node name="TimeTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h8e58")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 108.0
+offset_right = 213.0
+offset_bottom = 131.0
+theme_type_variation = &"HeaderLarge"
+text = "D"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 194.0
+offset_right = 218.0
+offset_bottom = 217.0
+theme_type_variation = &"HeaderLarge"
+text = "H"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 360.0
+offset_right = 458.0
+offset_bottom = 383.0
+theme_type_variation = &"HeaderLarge"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://sxs1eux2lsyl"]
+
+[ext_resource type="Script" uid="uid://8cxfam2181rv" path="res://Code/GpuCard.gd" id="1_l35mn"]
+
+[node name="Nvidia RTX 2060S" type="Node"]
+script = ExtResource("1_l35mn")
+Model = "Nvidia RTX 2060S"
+BaseHashrate = 42.0
+DefaultPower = 135
+MaxQuality = 0.95
+MinQuality = 0.7
+CoreBoost = 1650
+MenBoost = 14000
+Vram = 8
+VramType = 2
+MarketPrice = 1400

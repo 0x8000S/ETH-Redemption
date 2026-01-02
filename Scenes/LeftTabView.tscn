@@ -1,0 +1,207 @@
+[gd_scene load_steps=6 format=3 uid="uid://5mltb35dt8sy"]
+
+[ext_resource type="Script" uid="uid://dwc5hj6a8q1jh" path="res://Code/LeftTabView.gd" id="1_3lj8n"]
+[ext_resource type="PackedScene" uid="uid://boxqa4tpeslwf" path="res://Scenes/GPUItem.tscn" id="1_k1b33"]
+[ext_resource type="Script" uid="uid://bb0r67x4jp7nn" path="res://Code/GPUInfoScrollView.gd" id="3_05qss"]
+[ext_resource type="Script" uid="uid://cov5jik35fvxn" path="res://Code/MoneyScrollView.gd" id="4_hukiw"]
+[ext_resource type="Script" uid="uid://cx6r2kl1pghxb" path="res://Code/MainBoardInfo.gd" id="5_twour"]
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(280, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 250.0
+grow_vertical = 2
+script = ExtResource("1_3lj8n")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+
+[node name="显卡" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+tooltip_text = "当前仓库内所持有的显卡"
+metadata/_tab_index = 0
+
+[node name="GPUVSplit" type="VSplitContainer" parent="TabContainer/显卡"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = -250
+
+[node name="GPUListScrollView" type="ScrollContainer" parent="TabContainer/显卡/GPUVSplit"]
+layout_mode = 2
+size_flags_vertical = 3
+scroll_deadzone = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/显卡/GPUVSplit/GPUListScrollView"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="TabContainer/显卡/GPUVSplit/GPUListScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "GPUItemView"
+
+[node name="CardPut" type="MarginContainer" parent="TabContainer/显卡/GPUVSplit/GPUListScrollView/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/显卡/GPUVSplit/GPUListScrollView/VBoxContainer/CardPut"]
+layout_mode = 2
+
+[node name="PanelContainer" parent="TabContainer/显卡/GPUVSplit/GPUListScrollView/VBoxContainer/CardPut/VBoxContainer" instance=ExtResource("1_k1b33")]
+layout_mode = 2
+
+[node name="PanelContainer2" parent="TabContainer/显卡/GPUVSplit/GPUListScrollView/VBoxContainer/CardPut/VBoxContainer" instance=ExtResource("1_k1b33")]
+layout_mode = 2
+
+[node name="GPUInfoScrollView" type="ScrollContainer" parent="TabContainer/显卡/GPUVSplit"]
+layout_mode = 2
+scroll_deadzone = 10
+script = ExtResource("3_05qss")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/显卡/GPUVSplit/GPUInfoScrollView"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="TabContainer/显卡/GPUVSplit/GPUInfoScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "GPUInfoView"
+
+[node name="GPUName" type="Label" parent="TabContainer/显卡/GPUVSplit/GPUInfoScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "GPUNAME"
+
+[node name="Hashrate" type="Label" parent="TabContainer/显卡/GPUVSplit/GPUInfoScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "算力: --MH/S"
+
+[node name="Power" type="Label" parent="TabContainer/显卡/GPUVSplit/GPUInfoScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "功耗: --W"
+
+[node name="Health" type="Label" parent="TabContainer/显卡/GPUVSplit/GPUInfoScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "健康度: --"
+
+[node name="Old" type="Label" parent="TabContainer/显卡/GPUVSplit/GPUInfoScrollView/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "老化系数 * 算力"
+mouse_filter = 0
+theme_type_variation = &"Title"
+text = "老化系数: --"
+
+[node name="Quality" type="Label" parent="TabContainer/显卡/GPUVSplit/GPUInfoScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "体质: --"
+
+[node name="资金" type="Control" parent="TabContainer"]
+layout_mode = 2
+tooltip_text = "资金流向"
+metadata/_tab_index = 1
+
+[node name="MoneyScrollView" type="ScrollContainer" parent="TabContainer/资金"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_hukiw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/资金/MoneyScrollView"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="TabContainer/资金/MoneyScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "掌控你的资金链"
+
+[node name="Tr" type="Label" parent="TabContainer/资金/MoneyScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "1ETH="
+
+[node name="Have" type="Label" parent="TabContainer/资金/MoneyScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "当前拥有0 ETH"
+
+[node name="CurrentMoney" type="Label" parent="TabContainer/资金/MoneyScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "当前持有资金: 
+￥0"
+
+[node name="Clac" type="Button" parent="TabContainer/资金/MoneyScrollView/VBoxContainer"]
+layout_mode = 2
+text = "变现"
+
+[node name="Shop" type="Button" parent="TabContainer/资金/MoneyScrollView/VBoxContainer"]
+layout_mode = 2
+text = "Open Shop"
+
+[node name="ElectricityBill" type="Label" parent="TabContainer/资金/MoneyScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "电费(月结)"
+
+[node name="ElectricityBillText" type="Label" parent="TabContainer/资金/MoneyScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "累计电费: ￥0"
+
+[node name="CurrentElectricityBill" type="Label" parent="TabContainer/资金/MoneyScrollView/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "当前电价: ￥0"
+
+[node name="主板" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("5_twour")
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/主板"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MaxGPU" type="Label" parent="TabContainer/主板/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "最大支持显卡数: 0"
+
+[node name="SumMHS" type="Label" parent="TabContainer/主板/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "主板显卡总算力: 
+0MH/S"
+
+[node name="SumPower" type="Label" parent="TabContainer/主板/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "总功耗: 0W"
+
+[connection signal="pressed" from="TabContainer/资金/MoneyScrollView/VBoxContainer/Clac" to="TabContainer/资金/MoneyScrollView" method="WhenClacButtonClicked"]
+[connection signal="pressed" from="TabContainer/资金/MoneyScrollView/VBoxContainer/Shop" to="." method="_on_button_pressed"]

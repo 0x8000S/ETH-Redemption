@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dspi4y3ho0o4f"]
+
+[ext_resource type="Script" uid="uid://8cxfam2181rv" path="res://Code/GpuCard.gd" id="1_hqs21"]
+
+[node name="AMD RX 580" type="Node"]
+script = ExtResource("1_hqs21")
+Model = "AMD RX 580"
+BaseHashrate = 32.74
+DefaultPower = 185
+MaxQuality = 0.9
+MinQuality = 0.55
+CoreBoost = 1257
+MenBoost = 8000
+Vram = 8
+MarketPrice = 650

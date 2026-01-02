@@ -1,0 +1,190 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2kfjxuhroqkn"]
+
+[ext_resource type="Script" uid="uid://cry7rld1yi75n" path="res://Code/UiTips.gd" id="1_1nrse"]
+
+[node name="UiTips" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1nrse")
+
+[node name="MoneyErrorC" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PC" type="PanelContainer" parent="MoneyErrorC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MoneyErrorC/PC"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VC" type="VBoxContainer" parent="MoneyErrorC/PC/MC"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MoneyErrorC/PC/MC/VC"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "钱不够"
+
+[node name="Context" type="Label" parent="MoneyErrorC/PC/MC/VC"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "你没有足够的钱去购买%s"
+
+[node name="OK" type="Button" parent="MoneyErrorC/PC/MC/VC"]
+layout_mode = 2
+text = "我知道了"
+
+[node name="CustomMessageBox" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CustomMessageBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CustomMessageBox/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CustomMessageBox/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CustomMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "CustomTitle"
+
+[node name="Context" type="Label" parent="CustomMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "CustomContext"
+
+[node name="OK" type="Button" parent="CustomMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "OK"
+
+[node name="SellMessageBox" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SellMessageBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SellMessageBox/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SellMessageBox/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="SellMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "出售你的: %s显卡"
+
+[node name="Context" type="Label" parent="SellMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "购买价: %s
+出售价: %s"
+
+[node name="Sell" type="Button" parent="SellMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "出售"
+
+[node name="GiveUp" type="Button" parent="SellMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SubButton"
+text = "放弃"
+
+[node name="FixMessageBox" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="FixMessageBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="FixMessageBox/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FixMessageBox/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "修复你的%s显卡"
+
+[node name="Context" type="Label" parent="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "当前的寿命|老化: %s|%s
+修复后寿命|老化: %s|%s"
+
+[node name="OptionButton" type="OptionButton" parent="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "简易的修复"
+popup/item_0/id = 0
+popup/item_1/text = "正常的修复"
+popup/item_1/id = 1
+popup/item_2/text = "专业的修复"
+popup/item_2/id = 2
+popup/item_3/text = "大师级的修复"
+popup/item_3/id = 3
+
+[node name="Fix" type="Button" parent="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "修复(￥%s)"
+
+[node name="Cancel" type="Button" parent="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SubButton"
+text = "不了"
+
+[connection signal="pressed" from="MoneyErrorC/PC/MC/VC/OK" to="." method="WhenMEOKButtonClicked"]
+[connection signal="pressed" from="CustomMessageBox/PanelContainer/MarginContainer/VBoxContainer/OK" to="." method="WhenCustomMessageBoxOKButtonClicked"]
+[connection signal="pressed" from="SellMessageBox/PanelContainer/MarginContainer/VBoxContainer/Sell" to="." method="WhenSellButtonClicked"]
+[connection signal="pressed" from="SellMessageBox/PanelContainer/MarginContainer/VBoxContainer/GiveUp" to="." method="WhenSellGiveUpButtonClicked"]
+[connection signal="item_selected" from="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer/OptionButton" to="." method="WhenOptionButtonChanged"]
+[connection signal="pressed" from="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer/Fix" to="." method="WhenFixButtonClicked"]
+[connection signal="pressed" from="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer/Cancel" to="." method="WhenFixCancelClicked"]

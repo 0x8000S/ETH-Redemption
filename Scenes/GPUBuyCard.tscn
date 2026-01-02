@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsu63qljmr3un"]
+
+[ext_resource type="Script" uid="uid://8e5avlkraf62" path="res://Code/GpuBuyCard.gd" id="1_lhlp1"]
+
+[node name="GPUCARD" type="PanelContainer"]
+script = ExtResource("1_lhlp1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="GpuName" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "AMD RX 580-8G"
+
+[node name="SubTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "基础算力: 32MH/S
+TDP: 185W
+显存: 8G
+定价: ￥855"
+
+[node name="Buy" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "购买"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Buy" to="." method="WhenBuyButtonClick"]

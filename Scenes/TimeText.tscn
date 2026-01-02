@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci2gks716kur"]
+
+[ext_resource type="Script" uid="uid://5mr3gh47ckm2" path="res://Code/TimeText.gd" id="1_h8c22"]
+
+[node name="TimeText" type="PanelContainer"]
+offset_right = 102.0
+offset_bottom = 27.0
+script = ExtResource("1_h8c22")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="Time" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "0Y-0m-0d -1h"

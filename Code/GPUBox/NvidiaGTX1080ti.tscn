@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi18iupnnp7l7"]
+
+[ext_resource type="Script" uid="uid://8cxfam2181rv" path="res://Code/GpuCard.gd" id="1_gan2k"]
+
+[node name="Nvidia GTX 1080TI" type="Node"]
+script = ExtResource("1_gan2k")
+Model = "Nvidia GTX 1080TI"
+BaseHashrate = 43.0
+DefaultPower = 220
+MaxQuality = 0.92
+MinQuality = 0.65
+CoreBoost = 1582
+MenBoost = 11000
+Vram = 8
+VramType = 1
+MarketPrice = 1200

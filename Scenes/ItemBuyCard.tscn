@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://wwc4mfy0pemf"]
+
+[ext_resource type="Script" uid="uid://b6tkrqwemghnr" path="res://Code/ItemBuyCard.gd" id="1_bo1fa"]
+
+[node name="ItemBuyCard" type="PanelContainer" node_paths=PackedStringArray("ItemName", "ItemPrice", "BuyButton")]
+offset_right = 4.0
+offset_bottom = 4.0
+script = ExtResource("1_bo1fa")
+ItemName = NodePath("MarginContainer/VBoxContainer/ItemName")
+ItemPrice = NodePath("MarginContainer/VBoxContainer/ItemSellPrice")
+BuyButton = NodePath("MarginContainer/VBoxContainer/Buy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "ITEMNAME"
+
+[node name="ItemSellPrice" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "ITEMSELLPRICE"
+
+[node name="Buy" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "购买"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Buy" to="." method="WhenBuyButtonClicked"]

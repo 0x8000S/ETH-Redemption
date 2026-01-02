@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd3bx2qp4ww5u"]
+
+[ext_resource type="PackedScene" uid="uid://b1kegvnfo88v5" path="res://Scenes/MainGPUView.tscn" id="1_741vi"]
+[ext_resource type="PackedScene" uid="uid://c2l2fnou7nd7c" path="res://Test/shop.tscn" id="2_37edh"]
+[ext_resource type="PackedScene" uid="uid://bbvtjro8sh88a" path="res://Scenes/GlobalPrice.tscn" id="4_gq8gf"]
+[ext_resource type="PackedScene" uid="uid://d2kfjxuhroqkn" path="res://Scenes/UiTips.tscn" id="5_gq8gf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainView" parent="." instance=ExtResource("1_741vi")]
+layout_mode = 1
+
+[node name="Shop" parent="." instance=ExtResource("2_37edh")]
+visible = false
+layout_mode = 1
+
+[node name="Components" type="Node" parent="."]
+
+[node name="GlobalPrice" parent="Components" instance=ExtResource("4_gq8gf")]
+
+[node name="UiTips" parent="Components" instance=ExtResource("5_gq8gf")]

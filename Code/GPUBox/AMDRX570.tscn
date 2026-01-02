@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm7s1rggb227"]
+
+[ext_resource type="Script" uid="uid://8cxfam2181rv" path="res://Code/GpuCard.gd" id="1_tr4k1"]
+
+[node name="AMD RX 570" type="Node"]
+script = ExtResource("1_tr4k1")
+Model = "AMD RX 570"
+BaseHashrate = 24.5
+DefaultPower = 125
+MaxQuality = 0.58
+MinQuality = 0.5
+CoreBoost = 1244
+MenBoost = 7000
+Vram = 8
+MarketPrice = 420

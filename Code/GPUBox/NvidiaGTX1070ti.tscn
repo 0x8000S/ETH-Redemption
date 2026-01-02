@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://6f7j02eqkmge"]
+
+[ext_resource type="Script" uid="uid://8cxfam2181rv" path="res://Code/GpuCard.gd" id="1_1thim"]
+
+[node name="Nvidia GTX 1070TI" type="Node"]
+script = ExtResource("1_1thim")
+Model = "Nvidia GTX 1070TI"
+BaseHashrate = 30.5
+DefaultPower = 150
+MaxQuality = 0.9
+MinQuality = 0.6
+CoreBoost = 1683
+MenBoost = 8000
+Vram = 8
+MarketPrice = 900

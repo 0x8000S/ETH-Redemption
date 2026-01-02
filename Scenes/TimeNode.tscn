@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://chcmdyo6472nf"]
+
+[ext_resource type="Script" uid="uid://xjcbpdhvrggg" path="res://Code/TimeNode.gd" id="1_nhesm"]
+
+[node name="TimeNode" type="Node"]
+script = ExtResource("1_nhesm")
+
+[node name="HOUR" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="HOUR" to="." method="WhenOneHourPast"]
