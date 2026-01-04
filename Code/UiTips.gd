@@ -45,7 +45,7 @@ func ShowSellMessageBox(GPUC:GpuCard):
     SellTitle.text = "出售你的: %s显卡"
     SellContext.text = "购买价: ￥%s\n出售价: ￥%s"
     SellTitle.text = SellTitle.text % GPUC.Model
-    SellMoney = float("%.2f" % (GPUC.MarketPrice * 0.8 - (1 - GPUC.Quality) * 10 - (1 - GPUC.Old) * 15 - (1 - GPUC.Health) * 8 + GPUC.GetHashrate()* 2))
+    SellMoney = float("%.2f" % (GPUC.MarketPrice * 0.7 - (1 - GPUC.Quality) * 10 - (1 - GPUC.Old) * 150 - (1 - GPUC.Health) * 20 + GPUC.GetHashrate()* 2))
     SellContext.text = SellContext.text % [GPUC.MarketPrice, SellMoney]
 
 func ShowFixMessageBox(GPUC:GpuCard):

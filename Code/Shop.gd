@@ -4,6 +4,7 @@ extends Control
 @onready var Money:Label = $Margin/MainPanel/Margin/VBox/HBox/Money
 @onready var NotHasMore:AcceptDialog = $NotHasMore
 @onready var ItemFlow = $Margin/MainPanel/Margin/VBox/Tabs/小道具/MarginContainer/ScrollContainer/MarginContainer/ItemsFlow
+@onready var VenueFlow = $Margin/MainPanel/Margin/VBox/Tabs/场地/MarginContainer/ScrollContainer/MarginContainer/VenueFlow
 
 
 func ShowShop():
@@ -15,6 +16,7 @@ func _ready() -> void:
 	SignalNode.PastOneDay.connect(UpdataGPU)
 	UpdataGPU()
 	UpdataItems()
+	UpdataVenue()
 
 func BuyItem(GPUC: GpuCard, s:GpuBuyCard):
 	Money.text = "当前持有资金: ￥%s" % Global.Money
@@ -46,6 +48,16 @@ func UpdataItems():
 		ic.Init(i)
 		ic.ReloadItemsView.connect(UpdataItems)
 		ItemFlow.add_child(ic)
+
+func UpdataVenue():
+	if VenueFlow.get_child_count() != 0:
+		for i in VenueFlow.get_children():
+			i.queue_free()
+	for i in Global.Venue.values():
+		var ic:ItemBuyCard = preload("uid://wwc4mfy0pemf").instantiate()
+		ic.InitH(i)
+		ic.ReloadVenueView.connect(UpdataVenue)
+		VenueFlow.add_child(ic)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ReloadShop"):

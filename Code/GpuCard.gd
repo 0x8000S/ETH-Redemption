@@ -121,6 +121,8 @@ func GetPower() -> int:
 	var power:int = int(DefaultPower * (1 - (OCMem/4000) * 0.1 + (OCCore/2000) * 0.15 - (float(OffsetVolt)/150) * 0.12)) + OCPowerCoefficient + 10-Old*10
 	if OnBoard and Global.MainBoardPowerState:
 		power += randi_range(1, 8)
+	if not Global.HasItems.has(Global.Items.GetPower):
+		return 0
 	return power
 
 func Aging():

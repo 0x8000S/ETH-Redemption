@@ -31,6 +31,8 @@ func _ready() -> void:
 	SignalNode.UpdataShowText.connect(EditGPU)
 	SignalNode.UnEditGPU.connect(Rest)
 
+func _process(delta: float) -> void:
+	Updata()
 
 
 func Rest(GPUC:GpuCard):

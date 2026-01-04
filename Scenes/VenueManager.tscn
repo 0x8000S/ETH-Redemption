@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh14ys0c3k2yu"]
+
+[ext_resource type="Script" uid="uid://bhqotjronn7v" path="res://Code/VenueManager.gd" id="1_ke6cb"]
+
+[node name="VenueManager" type="Node"]
+script = ExtResource("1_ke6cb")

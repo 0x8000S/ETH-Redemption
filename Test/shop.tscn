@@ -61,7 +61,7 @@ vertical_alignment = 1
 [node name="Tabs" type="TabContainer" parent="Margin/MainPanel/Margin/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 2
+current_tab = 1
 
 [node name="显卡" type="Control" parent="Margin/MainPanel/Margin/VBox/Tabs"]
 visible = false
@@ -90,11 +90,37 @@ size_flags_horizontal = 3
 alignment = 1
 
 [node name="场地" type="Control" parent="Margin/MainPanel/Margin/VBox/Tabs"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
+[node name="MarginContainer" type="MarginContainer" parent="Margin/MainPanel/Margin/VBox/Tabs/场地"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Margin/MainPanel/Margin/VBox/Tabs/场地/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Margin/MainPanel/Margin/VBox/Tabs/场地/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VenueFlow" type="FlowContainer" parent="Margin/MainPanel/Margin/VBox/Tabs/场地/MarginContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
 [node name="小道具" type="Control" parent="Margin/MainPanel/Margin/VBox/Tabs"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

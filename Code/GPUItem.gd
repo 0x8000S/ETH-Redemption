@@ -52,6 +52,11 @@ func Iint(GPUC:GpuCard, onBoardf=false):
 		if Gpu.LHR:
 			ChangedBIOS.visible = true
 
+func _process(delta: float) -> void:
+	if Gpu.Old == 0:
+		$Error.visible = true
+	else:
+		$Error.visible = false
 
 func WhenEditButtonClicked() -> void:
 	if Gpu.Edit == false:
