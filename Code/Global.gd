@@ -1,6 +1,6 @@
 extends Node
 
-var Money:float = 20000.0
+var Money:float = 2000.0
 var ETHMoney:float = 0.0
 var ElectricityPrice:float = 0.6
 var ElectricityPriceCount:float = 0.0
@@ -15,6 +15,7 @@ var MainBoardPowerState:bool = false
 var HourTime = 2.0
 var ZoomValue = 1.0
 var MaxPower = 1600
+var LoadedWorld = ""
 
 var FixLevel:Array[bool] = [1, 0, 0, 0]
 var FixLevelValue:Dictionary[int,Dictionary] = {
@@ -54,16 +55,16 @@ enum Venue {
 
 # [场地名称, 显卡插槽数, 额定电源, 电价, 定价]
 var VenueInfo:Dictionary[Venue, Array] = {
-	Venue.ResidentialBuilding: ["居民楼", 6, 0.60, 1600, 0],
-	Venue.IndustrialPark: ["工业园", 12, 0.45, 3000, 20000],
-	Venue.HydropowerPlant: ["水电厂", 24, 0.32, 5500, 100000]
+	Venue.ResidentialBuilding: [tr("居民楼"), 6, 0.60, 1600, 0],
+	Venue.IndustrialPark: [tr("工业园"), 12, 0.45, 3000, 20000],
+	Venue.HydropowerPlant: [tr("水电厂"), 24, 0.32, 5500, 100000]
 }
 
 var ItemsText:Dictionary[Items, String] = {
-	Items.FixLevel1: "正常修复",
-	Items.FixLevel2: "专业修复",
-	Items.FixLevel3: "大师级修复",
-	Items.GetPower: "功耗计"
+	Items.FixLevel1: tr("正常修复"),
+	Items.FixLevel2: tr("专业修复"),
+	Items.FixLevel3: tr("大师级修复"),
+	Items.GetPower: tr("功耗计")
 }
 
 var ItemsPrice:Dictionary[Items, float] = {
@@ -84,6 +85,14 @@ enum MenType {
 	GDDR6_14G,
 	GDDR6X_19G,
 	GDDR6X_22G
+}
+
+var MenText:Dictionary[MenType, String] = {
+	MenType.GDDR5_8G: "GDDR5",
+	MenType.GDDR5X_8G: "GDDR5X",
+	MenType.GDDR6_14G: "GDDR6",
+	MenType.GDDR6X_19G: "GDDR6X",
+	MenType.GDDR6X_22G: "GDDR6XL"
 }
 
 var MenSafeMap:Dictionary[MenType, float] = {
@@ -112,3 +121,24 @@ enum Gpu {
 	Nvidia_RTX2060S,
 	Nvidia_RTX3060TI_LHR
 }
+
+func Rest():
+	Money = 20000.0
+	ETHMoney = 0.0
+	ElectricityPrice = 0.6
+	ElectricityPriceCount = 0.0
+	DayCount = 0
+	HourCount = 0
+	MoonCount = 0
+	YearCount = 0
+	HasGpu = []
+	BaseETH = 0.000000625
+	BaseHourETH = 0.000000625
+	MainBoardPowerState = false
+	HourTime = 2.0
+	ZoomValue = 1.0
+	MaxPower = 1600
+	NowSetVenue = Venue.ResidentialBuilding
+	FixLevel = [1, 0, 0, 0]
+	HasVenue = [Venue.ResidentialBuilding]
+	HasItems = []

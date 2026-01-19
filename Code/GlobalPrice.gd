@@ -31,5 +31,5 @@ func UpdataETH():
     Global.BaseHourETH = Global.BaseETH
     var rf = randf()
     if rf >= 0.6 and Global.ETHMoney >= 0.0002:
-        Global.BaseHourETH -= Global.BaseETH * (Global.ETHMoney / 100+randf())
+        Global.BaseHourETH = Global.BaseETH * (minf(randf()+0.4, 1.2))
         print(">.< -> %s" % Global.BaseHourETH)

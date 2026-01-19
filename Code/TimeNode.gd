@@ -4,7 +4,6 @@ extends Node
 
 func _ready() -> void:
     HoursTimer.wait_time = Global.GetHourTime()
-    HoursTimer.start()
 
 func WhenOneHourPast() -> void:
     if Global.HourCount + 1 == 24:
@@ -27,3 +26,10 @@ func WhenOneHourPast() -> void:
     SignalNode.PastOneHour.emit()
     HoursTimer.wait_time = Global.GetHourTime()
     HoursTimer.start()
+
+func Rest():
+    HoursTimer.stop()
+    Global.HourCount = 0
+    Global.DayCount = 0
+    Global.MoonCount = 0
+    Global.YearCount = 0

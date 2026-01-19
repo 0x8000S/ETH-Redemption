@@ -1,0 +1,700 @@
+# LANGUAGE translation for ETH的救赎 for the following files:
+# res://Scenes/MainView.tscn
+# res://Scenes/ErrorMessageBox.tscn
+# res://Scenes/GPUBuyCard.tscn
+# res://Scenes/GpuInfo.tscn
+# res://Scenes/GPUItem.tscn
+# res://Scenes/ItemBuyCard.tscn
+# res://Scenes/LeftTabView.tscn
+# res://Scenes/MainBoard.tscn
+# res://Scenes/MainGPUView.tscn
+# res://Scenes/MainMenu.tscn
+# res://Scenes/MessageBox.tscn
+# res://Scenes/OCView.tscn
+# res://Scenes/Shop.tscn
+# res://Scenes/StopPanel.tscn
+# res://Scenes/TimeText.tscn
+# res://Scenes/TimeZoom.tscn
+# res://Scenes/UiTips.tscn
+# res://Scenes/WorldCard.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ETH的救赎\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: Scenes/ErrorMessageBox.tscn Scenes/MainGPUView.tscn Scenes/MessageBox.tscn
+msgid "114514"
+msgstr ""
+
+#: Scenes/GPUBuyCard.tscn
+msgid "AMD RX 580-8G"
+msgstr ""
+
+#: Scenes/GPUBuyCard.tscn
+#, fuzzy
+#| msgid ""
+#| "基础算力: %sMH/s\n"
+#| "TDP: %sW\n"
+#| "显存: %sG\n"
+#| "定价: ￥%s"
+msgid ""
+"基础算力: 32MH/S\n"
+"TDP: 185W\n"
+"显存: 8G\n"
+"定价: ￥855"
+msgstr ""
+"Base Hashrate: %sMH/s\n"
+"TDP: %sW\n"
+"VRAM: %sG\n"
+"Price: ¥%s"
+
+#: Scenes/GPUBuyCard.tscn Scenes/ItemBuyCard.tscn
+msgid "购买"
+msgstr "Buy"
+
+#: Scenes/GpuInfo.tscn
+msgid "GPUINFNAME"
+msgstr ""
+
+#: Scenes/GpuInfo.tscn
+msgid "查看"
+msgstr "View"
+
+#: Scenes/GPUItem.tscn
+msgid "GPU NAME"
+msgstr ""
+
+#: Scenes/GPUItem.tscn
+msgid "装载"
+msgstr "Pick Up"
+
+#: Scenes/GPUItem.tscn Code/GPUItem.gd
+msgid "编辑"
+msgstr "Edit"
+
+#: Scenes/GPUItem.tscn
+msgid "售卖"
+msgstr "Sell"
+
+#: Scenes/GPUItem.tscn
+msgid "修复"
+msgstr "Fix"
+
+#: Scenes/GPUItem.tscn
+msgid "解锁(￥200)"
+msgstr "Unlock (￥200)"
+
+#: Scenes/GPUItem.tscn Scenes/UiTips.tscn
+msgid "不了"
+msgstr "No"
+
+#: Scenes/GPUItem.tscn
+msgid "修改BIOS"
+msgstr "Changed BIOS"
+
+#: Scenes/ItemBuyCard.tscn
+msgid "ITEMNAME"
+msgstr ""
+
+#: Scenes/ItemBuyCard.tscn
+msgid "ITEMSELLPRICE"
+msgstr ""
+
+#: Scenes/LeftTabView.tscn Scenes/Shop.tscn
+msgid "显卡"
+msgstr "GPU"
+
+#: Scenes/LeftTabView.tscn
+msgid "当前仓库内所持有的显卡"
+msgstr "GPU currently held in the warehouse"
+
+#: Scenes/LeftTabView.tscn
+msgid "GPUItemView"
+msgstr ""
+
+#: Scenes/LeftTabView.tscn
+msgid "GPUInfoView"
+msgstr ""
+
+#: Scenes/LeftTabView.tscn Code/GPUInfoScrollView.gd
+msgid "GPUNAME"
+msgstr ""
+
+#: Scenes/LeftTabView.tscn Code/GPUInfoScrollView.gd
+msgid "算力: --MH/S"
+msgstr "Hash Rate: --MH/s"
+
+#: Scenes/LeftTabView.tscn Code/GPUInfoScrollView.gd
+msgid "功耗: --W"
+msgstr "TDP: --W"
+
+#: Scenes/LeftTabView.tscn Code/GPUInfoScrollView.gd
+msgid "健康度: --"
+msgstr "Health: --"
+
+#: Scenes/LeftTabView.tscn
+msgid "老化系数 * 算力"
+msgstr "Aging factor * computing power"
+
+#: Scenes/LeftTabView.tscn Code/GPUInfoScrollView.gd
+msgid "老化系数: --"
+msgstr "Aging coefficient: --"
+
+#: Scenes/LeftTabView.tscn Code/GPUInfoScrollView.gd
+msgid "体质: --"
+msgstr "Physique: --"
+
+#: Scenes/LeftTabView.tscn
+msgid "资金"
+msgstr "funds"
+
+#: Scenes/LeftTabView.tscn
+msgid "资金流向"
+msgstr "Capital flow"
+
+#: Scenes/LeftTabView.tscn
+msgid "掌控你的资金链"
+msgstr "Take control of your cash flow"
+
+#: Scenes/LeftTabView.tscn
+msgid "1ETH="
+msgstr ""
+
+#: Scenes/LeftTabView.tscn
+msgid "当前拥有0 ETH"
+msgstr "Currently have  0 ETH"
+
+#: Scenes/LeftTabView.tscn
+msgid ""
+"当前持有资金: \n"
+"￥0"
+msgstr "Current funds: ¥0"
+
+#: Scenes/LeftTabView.tscn
+msgid "变现"
+msgstr "Monetize"
+
+#: Scenes/LeftTabView.tscn
+msgid "Open Shop"
+msgstr ""
+
+#: Scenes/LeftTabView.tscn
+msgid "电费(月结)"
+msgstr "Electricity Bill (Monthly)"
+
+#: Scenes/LeftTabView.tscn
+msgid "累计电费: ￥0"
+msgstr "Total electricity bill: ￥0"
+
+#: Scenes/LeftTabView.tscn
+msgid "当前电价: ￥0"
+msgstr "Current electricity price: ￥0"
+
+#: Scenes/LeftTabView.tscn
+msgid "主板"
+msgstr "Mainboard"
+
+#: Scenes/LeftTabView.tscn
+msgid "最大支持显卡数: 0"
+msgstr "Maximum GPU: 0"
+
+#: Scenes/LeftTabView.tscn
+msgid ""
+"主板显卡总算力: \n"
+"0MH/S"
+msgstr ""
+"Total GPU hashrate: \n"
+"0 MH/s"
+
+#: Scenes/LeftTabView.tscn
+msgid "总功耗: 0W"
+msgstr "Total power consumption: 0W"
+
+#: Scenes/MainBoard.tscn
+msgid "黑蚂蚁牌主板🐜"
+msgstr "Black Ant Brand Mainboard 🐜"
+
+#: Scenes/MainBoard.tscn
+msgid "已装载GPU: 0/0"
+msgstr "GPU loaded: 0/0"
+
+#: Scenes/MainBoard.tscn Code/MainBoard.gd
+msgid "Power: OFF"
+msgstr ""
+
+#: Scenes/MainGPUView.tscn
+msgid "每月财报"
+msgstr "Monthly financial report"
+
+#: Scenes/MainGPUView.tscn
+msgid "1141515"
+msgstr ""
+
+#: Scenes/MainGPUView.tscn
+msgid "知道了"
+msgstr "I see"
+
+#: Scenes/MainGPUView.tscn Scenes/StopPanel.tscn
+msgid "暂停"
+msgstr "Stop"
+
+#: Scenes/MainGPUView.tscn
+msgid "▨"
+msgstr ""
+
+#: Scenes/MainMenu.tscn
+msgid "ETH的救赎"
+msgstr "Redemption of ETH"
+
+#: Scenes/MainMenu.tscn
+msgid "新存档"
+msgstr "New world"
+
+#: Scenes/MainMenu.tscn
+msgid "载入存档"
+msgstr "Load world"
+
+#: Scenes/MainMenu.tscn
+msgid "信息"
+msgstr "Information"
+
+#: Scenes/MainMenu.tscn Scenes/Shop.tscn
+msgid "退出"
+msgstr "Exit"
+
+#: Scenes/MainMenu.tscn
+msgid "NewWord"
+msgstr ""
+
+#: Scenes/MainMenu.tscn
+msgid "新建存档"
+msgstr "Created world"
+
+#: Scenes/MainMenu.tscn
+msgid "存档名： "
+msgstr "World name: "
+
+#: Scenes/MainMenu.tscn
+msgid "新建"
+msgstr "New"
+
+#: Scenes/MainMenu.tscn
+msgid "LoadWrold"
+msgstr ""
+
+#: Scenes/MainMenu.tscn
+msgid "InfoGpu"
+msgstr ""
+
+#: Scenes/MainMenu.tscn
+msgid "显卡信息"
+msgstr "Gpu Information"
+
+#: Scenes/MainMenu.tscn
+msgid ""
+"显卡名称: --\n"
+"基础算力: --\n"
+"频率: --\n"
+"显存: --\n"
+"显存频率: --\n"
+"TDP: --\n"
+"市场参考价格: ￥--\n"
+"\n"
+msgstr ""
+"GPU Name: --\n"
+"Base Computing Power: --\n"
+"Frequency: --\n"
+"Memory: --\n"
+"Memory Frequency: --\n"
+"TDP: --W\n"
+"Market Reference Price: ¥--\n"
+"\n"
+
+#: Scenes/OCView.tscn
+msgid "OC"
+msgstr "OC"
+
+#: Scenes/OCView.tscn
+msgid "核心+0MHz"
+msgstr "Core+0MHz"
+
+#: Scenes/OCView.tscn
+msgid "显存+0MHz"
+msgstr "Men+0MHz"
+
+#: Scenes/OCView.tscn
+msgid "电压-0mv"
+msgstr "Voltage-0mv"
+
+#: Scenes/OCView.tscn
+msgid "应用"
+msgstr "App"
+
+#: Scenes/Shop.tscn
+msgid "拼少少"
+msgstr "PDD"
+
+#: Scenes/Shop.tscn
+msgid "当前持有资金: ￥%s"
+msgstr "Current funds: ¥%s"
+
+#: Scenes/Shop.tscn
+msgid "场地"
+msgstr "Venue"
+
+#: Scenes/Shop.tscn
+msgid "小道具"
+msgstr "Items"
+
+#: Scenes/StopPanel.tscn
+msgid ""
+"已过去\n"
+"%s 年\n"
+"%s 月\n"
+"%s 日\n"
+"%s 小时\n"
+"总资产: ￥%s"
+msgstr ""
+"Elapsed\n"
+"%s years\n"
+"%s months\n"
+"%s days\n"
+"%s hours\n"
+"Total Assets: ¥%s"
+
+#: Scenes/StopPanel.tscn
+msgid "继续"
+msgstr "Continue"
+
+#: Scenes/StopPanel.tscn
+msgid "保存&退出"
+msgstr "Save&Exit"
+
+#: Scenes/TimeText.tscn
+msgid "0Y-0m-0d -1h"
+msgstr ""
+
+#: Scenes/TimeZoom.tscn
+msgid " < "
+msgstr ""
+
+#: Scenes/TimeZoom.tscn
+msgid "○"
+msgstr ""
+
+#: Scenes/TimeZoom.tscn
+msgid "x 1.0"
+msgstr ""
+
+#: Scenes/TimeZoom.tscn
+msgid " > "
+msgstr ""
+
+#: Scenes/UiTips.tscn
+msgid "钱不够"
+msgstr "Not has enough money"
+
+#: Scenes/UiTips.tscn Code/UiTips.gd
+msgid "你没有足够的钱去购买%s"
+msgstr "Not has enough money to buy %s"
+
+#: Scenes/UiTips.tscn
+msgid "我知道了"
+msgstr "I know"
+
+#: Scenes/UiTips.tscn
+msgid "CustomTitle"
+msgstr ""
+
+#: Scenes/UiTips.tscn
+msgid "CustomContext"
+msgstr ""
+
+#: Scenes/UiTips.tscn
+msgid "OK"
+msgstr ""
+
+#: Scenes/UiTips.tscn Code/UiTips.gd
+msgid "出售你的: %s显卡"
+msgstr "Sell you GPU %s"
+
+#: Scenes/UiTips.tscn
+msgid ""
+"购买价: %s\n"
+"出售价: %s"
+msgstr ""
+"Purchase Price: %s\n"
+"Selling Price: %s"
+
+#: Scenes/UiTips.tscn
+msgid "出售"
+msgstr "Sell"
+
+#: Scenes/UiTips.tscn
+msgid "放弃"
+msgstr "Give up"
+
+#: Scenes/UiTips.tscn Code/UiTips.gd
+msgid "修复你的%s显卡"
+msgstr "Fix your GPU %s"
+
+#: Scenes/UiTips.tscn
+msgid ""
+"当前的寿命|老化: %s|%s\n"
+"修复后寿命|老化: %s|%s"
+msgstr ""
+"Current Durability         | Aging: %s | %s\n"
+"Durability After Repair | Aging: %s | %s"
+
+#: Scenes/UiTips.tscn
+msgid "简易的修复"
+msgstr "Simple repair"
+
+#: Scenes/UiTips.tscn
+msgid "正常的修复"
+msgstr "Normal repair"
+
+#: Scenes/UiTips.tscn
+msgid "专业的修复"
+msgstr "Professional Repair"
+
+#: Scenes/UiTips.tscn
+msgid "大师级的修复"
+msgstr "Master-level restoration"
+
+#: Scenes/UiTips.tscn Code/UiTips.gd
+msgid "修复(￥%s)"
+msgstr "Fix(￥%s)"
+
+#: Scenes/UiTips.tscn
+msgid "你真的要删除存档%s吗？"
+msgstr "Would you delete world %s?"
+
+#: Scenes/UiTips.tscn
+msgid "这真的会失去它很久很久"
+msgstr "This will really be lost for a very, very long time"
+
+#: Scenes/UiTips.tscn
+msgid "是的"
+msgstr "Yes"
+
+#: Scenes/WorldCard.tscn
+msgid "WORLDNAME"
+msgstr ""
+
+#: Scenes/WorldCard.tscn
+msgid "已过去%s天 | ￥%s"
+msgstr "%s years %s months %s days %s hours have passed | ¥%s"
+
+#: Scenes/WorldCard.tscn
+msgid "载入"
+msgstr "Load"
+
+#: Scenes/WorldCard.tscn
+msgid "删除"
+msgstr "Delete"
+
+#: Code/GPUItem.gd
+msgid "取消编辑"
+msgstr "UnEdit"
+
+#: Code/GPUItem.gd
+msgid "卸下"
+msgstr "Pick up"
+
+#: Code/ItemBuyCard.gd
+msgid "(已购买)"
+msgstr "(Purchased)"
+
+#: Code/ItemBuyCard.gd
+msgid "搬入"
+msgstr "Move in"
+
+#: Code/MainBoard.gd
+msgid "Power: ON"
+msgstr ""
+
+#: Code/UiTips.gd
+msgid ""
+"购买价: ￥%s\n"
+"出售价: ￥%s"
+msgstr ""
+"Purchase Price: %s\n"
+"Selling Price: %s"
+
+#: Code/UiTips.gd
+msgid ""
+"寿命 %.2f->%.2f\n"
+"老化 %.2f->%.2f"
+msgstr ""
+"Lifespan %.2f->%.2f\n"
+"Aging %.2f->%.2f"
+
+#: Code/UiTips.gd
+msgid ""
+"\n"
+"品质提升 %.2f->%.2f"
+msgstr ""
+"\n"
+"Quality improvement %.2f->%.2f"
+
+#: Code/UiTips.gd
+msgid "显卡已完全损坏,无法修复!"
+msgstr "The GPU is completely damaged and cannot be repaired!"
+
+msgid "核心+%sMhz"
+msgstr "Core+%sMhz"
+
+msgid "显存+%sMHz"
+msgstr "Men+%sMHz"
+
+msgid "电压-%smv"
+msgstr "Voltage -%smv"
+
+msgid "道具%s"
+msgstr "Item %s"
+
+msgid "场地%s"
+msgstr "Venue %s"
+
+msgid ""
+"基础算力: %sMH/s\n"
+"TDP: %sW\n"
+"显存: %sG\n"
+"定价: ￥%s"
+msgstr ""
+"Base Hashrate: %sMH/s\n"
+"TDP: %sW\n"
+"VRAM: %sG\n"
+"Price: ¥%s"
+
+msgid "当月挖去ETH: %s"
+msgstr "ETH mined this month: %s"
+
+msgid "消耗电源 %sW"
+msgstr "Power consumption %sW"
+
+msgid "电费: ￥%s"
+msgstr "Total electricity bill: ¥%s"
+
+msgid "算力: %.2fMH/s"
+msgstr "Hash Rate: %.2fMH/s"
+
+msgid "功耗: %sW"
+msgstr "TDP: %sW"
+
+msgid "健康度: %.3f"
+msgstr "Health: %.3f"
+
+msgid "老化系数: %.3f"
+msgstr "Aging coefficient: %.3f"
+
+msgid "体质: %s"
+msgstr "Physique: %s"
+
+msgid "算力: --MH/s"
+msgstr "Hash Rate: --MH/s"
+
+msgid "满了"
+msgstr "Full"
+
+msgid "显卡插槽已被使用殆尽"
+msgstr "The GPU slots have all been used up."
+
+msgid "已装载GPU: %s/%s"
+msgstr "GPU loaded: %s/%s"
+
+msgid "最大支持显卡数: %s"
+msgstr "Maximum GPU: %s"
+
+msgid ""
+"主板显卡总算力:\n"
+" %.2fMH/s"
+msgstr ""
+"Total GPU hashrate: \n"
+" %.2fMH/s"
+
+msgid "总功耗: %sW"
+msgstr "Total power consumption: %sW"
+
+msgid ""
+"显卡名称: %s\n"
+"基础算力: %sMh/s\n"
+"频率: %sMHz\n"
+"显存: %sG\n"
+"显存频率: %sGbps\n"
+"TDP: %sW\n"
+"市场参考价格: ￥%s\n"
+msgstr ""
+"GPU Name: %s\n"
+"Base Computing Power: %sMh/s\n"
+"Frequency: %sMHz\n"
+"Memory: %sG\n"
+"Memory Frequency: %sGbps\n"
+"TDP: %sW\n"
+"Market Reference Price: ¥%s\n"
+"\n"
+
+msgid "存档名不可为空白!"
+msgstr "The world name cannot be blank!"
+
+msgid "非法的存档名!"
+msgstr "Invalid save name!"
+
+msgid "已有相同的存档!"
+msgstr "A save with the same timestamp already exists!"
+
+msgid "存档创建成功!"
+msgstr "World created successfully!"
+
+msgid "累计电费: ￥%.2f"
+msgstr "Total electricity bill: ￥%.2f"
+
+msgid ""
+"当前持有资金: \n"
+"￥%.2f"
+msgstr ""
+"Current funds held:\n"
+"￥%.2f"
+
+msgid "当前拥有: %.5f ETH"
+msgstr "Currently have  %.5f ETH"
+
+msgid "当前电价: ￥%.2f"
+msgstr "Current electricity price: ￥%.2f"
+
+msgid "已过去%s年%s月%s天%s时 | ￥%s"
+msgstr "%s years %s months %s days %s hours have passed | ¥%s"
+
+msgid "居民楼"
+msgstr "Residential building"
+
+msgid "工业园"
+msgstr "Industrial Park"
+
+msgid "水电厂"
+msgstr "Hydropower plant"
+
+msgid "功耗计"
+msgstr "Power Meter"
+
+msgid "正常修复"
+msgstr "Normal repair"
+
+msgid "专业修复"
+msgstr "Professional Repair"
+
+msgid "大师级修复"
+msgstr "Master-level repair"

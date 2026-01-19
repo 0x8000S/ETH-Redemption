@@ -17,7 +17,7 @@ func OverrideButtonFontColorTheme(btn:Button, c:Color):
 	btn.add_theme_color_override("font_pressed_color", c)
 
 func UpdataText():
-	PickGpuCount.text = "已装载GPU: %s/%s" % [MaxGPU, GPUListView.get_child_count()]
+	PickGpuCount.text = tr("已装载GPU: %s/%s") % [MaxGPU, GPUListView.get_child_count()]
 
 func PickUpGPU(GPUC:GpuCard):
 	if GPUListView.get_child_count() < MaxGPU:
@@ -25,15 +25,20 @@ func PickUpGPU(GPUC:GpuCard):
 		GPUListView.add_child(gi)
 		GPUC.OnBoard = true
 		gi.Iint(GPUC, true)
+		gi.remove_from_group("GPUItems")
+		gi.add_to_group("GPUItemsOnBoard")
 		Global.HasGpu.erase(GPUC)
 		GpuList.append(GPUC)
 		SignalNode.ReloadGpuList.emit()
 		UpdataText()
 	else:
-		SignalNode.ShowCustomMessageBox.emit("满了", "显卡插槽已被使用殆尽")
+		SignalNode.ShowCustomMessageBox.emit(tr("满了"), tr("显卡插槽已被使用殆尽"))
 
 func _process(delta: float) -> void:
 	UpdataText()
+	if isOn:
+		if GetAllGpuPower() > Global.MaxPower:
+			ChangedMainBoardPower(false)
 
 func GetAllGpuMh() -> float:
 	var sum = 0
@@ -41,16 +46,26 @@ func GetAllGpuMh() -> float:
 		sum += g.Gpu.GetHashrate()
 	return sum
 
+func GeneralHandGpu():
+	for i in GpuList:
+		i.WorkHours += 1
+		if i.RandomDamage and i.Broken == false:
+			if i.WorkHours / 20 < randf():
+				i.Broken = true
+				i.Old = 0
+
 func GetAllGpuPower() -> int:
 	var sum = 0
 	for g:GPUItem in GPUListView.get_children():
 		sum += g.Gpu.GetPower()
+		g.Gpu.OnBoard = true
 	sum += 80
 	return sum
 
 func HourlySettlement():
 	if isOn:
 		MaxPower = 0
+		GeneralHandGpu()
 		var s = GetAllGpuMh()
 		var day = s * Global.BaseHourETH
 		var hour = day / 24
@@ -60,7 +75,10 @@ func HourlySettlement():
 		MaxPower = GetAllGpuPower()
 		MonnPower += MaxPower
 		Global.ElectricityPriceCount += ((GetAllGpuPower()+80) * 0.001) * Global.ElectricityPrice
-		SignalNode.InfoMainBoard.emit(MaxGPU, GetAllGpuMh(), MaxPower)
+		if Global.HasItems.has(Global.Items.GetPower):
+			SignalNode.InfoMainBoard.emit(MaxGPU, GetAllGpuMh(), MaxPower)
+		else:
+			SignalNode.InfoMainBoard.emit(MaxGPU, GetAllGpuMh(), 80)
 
 func DailyFinancialReport():
 	if isOn:
@@ -80,6 +98,18 @@ func ClearAllGpus():
 	for i in GPUListView.get_children():
 		i.queue_free()
 
+func LoadMainBoardGpusEvent(Gpus:Array[PackedScene], State:bool):
+	ClearAllGpus()
+	for i in Gpus:
+		var g = i.instantiate()
+		var gi:GPUItem = preload("uid://boxqa4tpeslwf").instantiate()
+		GPUListView.add_child(gi)
+		gi.Iint(g, true)
+		GpuList.append(g)
+		SignalNode.ReloadGpuList.emit()
+		UpdataText()
+	ChangedMainBoardPower(State)
+
 func _ready() -> void:
 	UpdataText()
 	SignalNode.UpdataMainBoardText.connect(UpdataText)
@@ -91,6 +121,7 @@ func _ready() -> void:
 	SignalNode.ClearMainBoardAllGpu.connect(ClearAllGpus)
 	SignalNode.UpdateMainBoardMaxGpu.connect(func(maxGpu:int):MaxGPU=maxGpu)
 	SignalNode.ChangedMainBoardPowerState.connect(func(power:bool): ChangedMainBoardPower(power))
+	SignalNode.LoadMainBoardGpus.connect(LoadMainBoardGpusEvent)
 
 func WhenPowerButtonClicked() -> void:
 	isOn = not isOn

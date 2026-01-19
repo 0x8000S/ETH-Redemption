@@ -23,13 +23,14 @@ grow_vertical = 2
 
 [node name="PC" type="PanelContainer" parent="MoneyErrorC"]
 layout_mode = 2
+theme_type_variation = &"ErrorPanel"
 
 [node name="MC" type="MarginContainer" parent="MoneyErrorC/PC"]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
 [node name="VC" type="VBoxContainer" parent="MoneyErrorC/PC/MC"]
 layout_mode = 2
@@ -62,10 +63,10 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CustomMessageBox/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CustomMessageBox/PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -98,10 +99,10 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="SellMessageBox/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SellMessageBox/PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -140,10 +141,10 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="FixMessageBox/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FixMessageBox/PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -181,6 +182,53 @@ layout_mode = 2
 theme_type_variation = &"SubButton"
 text = "不了"
 
+[node name="DelWorldMessageBox" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="DelWorldMessageBox"]
+layout_mode = 2
+theme_type_variation = &"ErrorPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="DelWorldMessageBox/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DelWorldMessageBox/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="DelWorldMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "你真的要删除存档%s吗？"
+
+[node name="Context" type="Label" parent="DelWorldMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "这真的会失去它很久很久"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DelWorldMessageBox/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Cancel" type="Button" parent="DelWorldMessageBox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SubButton"
+text = "不了"
+
+[node name="OK" type="Button" parent="DelWorldMessageBox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "是的"
+
 [connection signal="pressed" from="MoneyErrorC/PC/MC/VC/OK" to="." method="WhenMEOKButtonClicked"]
 [connection signal="pressed" from="CustomMessageBox/PanelContainer/MarginContainer/VBoxContainer/OK" to="." method="WhenCustomMessageBoxOKButtonClicked"]
 [connection signal="pressed" from="SellMessageBox/PanelContainer/MarginContainer/VBoxContainer/Sell" to="." method="WhenSellButtonClicked"]
@@ -188,3 +236,5 @@ text = "不了"
 [connection signal="item_selected" from="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer/OptionButton" to="." method="WhenOptionButtonChanged"]
 [connection signal="pressed" from="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer/Fix" to="." method="WhenFixButtonClicked"]
 [connection signal="pressed" from="FixMessageBox/PanelContainer/MarginContainer/VBoxContainer/Cancel" to="." method="WhenFixCancelClicked"]
+[connection signal="pressed" from="DelWorldMessageBox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="WhenDelWorldCancelButtonClicked"]
+[connection signal="pressed" from="DelWorldMessageBox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/OK" to="." method="WhenDelWorldOKButtonClicked"]

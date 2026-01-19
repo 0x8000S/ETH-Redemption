@@ -5,9 +5,9 @@ extends Control
 @onready var SumPowerText:Label = $VBoxContainer/SumPower
 
 func UpdataText(MaxGpus:int, SumMHS:float, MaxPower:int):
-    MaxGpuText.text = "最大支持显卡数: %s" % MaxGpus
-    SumHmsText.text = "主板显卡总算力:\n %.2fMH/S" % SumMHS
-    SumPowerText.text = "总功耗: %sW" % MaxPower
+    MaxGpuText.text = tr("最大支持显卡数: %s") % MaxGpus
+    SumHmsText.text = tr("主板显卡总算力:\n %.2fMH/s") % SumMHS
+    SumPowerText.text = tr("总功耗: %sW") % MaxPower
 
 func _ready() -> void:
     SignalNode.InfoMainBoard.connect(UpdataText)

@@ -10,11 +10,11 @@ var NowEditGpu:GpuCard
 
 func UpdataData(GPUC:GpuCard):
 	GpuName.text = GPUC.Model
-	Hashrate.text = "算力: %.2fMH/S" % GPUC.GetHashrate()
-	Power.text = "功耗: %sW" % GPUC.GetPower()
-	Health.text = "健康度: %.3f" % GPUC.Old
-	Old.text = "老化系数: %.3f" % GPUC.Health
-	Quality.text = "体质: %s" % int(GPUC.Quality * 100)
+	Hashrate.text = tr("算力: %.2fMH/s") % GPUC.GetHashrate()
+	Power.text = tr("功耗: %sW") % GPUC.GetPower()
+	Health.text = tr("健康度: %.3f") % GPUC.Old
+	Old.text = tr("老化系数: %.3f") % GPUC.Health
+	Quality.text = tr("体质: %s") % int(GPUC.Quality * 100)
 
 
 func EditGPU(GPUC:GpuCard):
@@ -30,6 +30,7 @@ func _ready() -> void:
 	SignalNode.EditGPU.connect(EditGPU)
 	SignalNode.UpdataShowText.connect(EditGPU)
 	SignalNode.UnEditGPU.connect(Rest)
+	
 
 func _process(delta: float) -> void:
 	Updata()
@@ -38,8 +39,8 @@ func _process(delta: float) -> void:
 func Rest(GPUC:GpuCard):
 	NowEditGpu = null
 	GpuName.text = "GPUNAME"
-	Hashrate.text = "算力: --MH/S"
-	Power.text = "功耗: --W"
-	Health.text = "健康度: --"
-	Old.text = "老化系数: --"
-	Quality.text = "体质: --"
+	Hashrate.text = tr("算力: --MH/s")
+	Power.text = tr("功耗: --W")
+	Health.text = tr("健康度: --")
+	Old.text = tr("老化系数: --")
+	Quality.text = tr("体质: --")

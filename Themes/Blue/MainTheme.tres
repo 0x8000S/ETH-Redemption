@@ -1,15 +1,18 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://2t4vbyx0ctbr"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://2t4vbyx0ctbr"]
 
 [ext_resource type="StyleBox" uid="uid://bxiqu71pdprlo" path="res://Themes/Blue/Button/Disable.tres" id="1_cp01n"]
 [ext_resource type="StyleBox" uid="uid://8gsbnntalvq8" path="res://Themes/Blue/Button/Hover.tres" id="1_jg8oq"]
 [ext_resource type="StyleBox" uid="uid://b6cb4d6m8thbt" path="res://Themes/Blue/Button/Normal.tres" id="1_vuwmy"]
 [ext_resource type="StyleBox" uid="uid://d3ksluxooe2qj" path="res://Themes/Blue/Button/Sub/Normal.tres" id="4_88700"]
 [ext_resource type="StyleBox" uid="uid://b7hlnv0dp27sq" path="res://Themes/Blue/Panel/Panel.tres" id="4_r5686"]
+[ext_resource type="StyleBox" uid="uid://c1ai0lwy030sw" path="res://Themes/Blue/Panel/ErrorPanel.tres" id="4_t107i"]
 [ext_resource type="StyleBox" uid="uid://ckgcik8tkx5tu" path="res://Themes/Blue/FoldView/TitleClose.tres" id="4_xa2bb"]
 [ext_resource type="StyleBox" uid="uid://x5y827taufy4" path="res://Themes/Blue/Button/Sub/Hover.tres" id="5_l8amt"]
 [ext_resource type="StyleBox" uid="uid://cqjnood8cd26w" path="res://Themes/Blue/FoldView/Panel.tres" id="5_tat47"]
 [ext_resource type="StyleBox" uid="uid://d0i5kpv64i3ne" path="res://Themes/Blue/FoldView/TitleOpen.tres" id="6_1tq2f"]
+[ext_resource type="StyleBox" uid="uid://co3adxy224j3d" path="res://Themes/Blue/LineEdit/LineFocus.tres" id="7_1i7hc"]
 [ext_resource type="StyleBox" uid="uid://f7wpltrtbv4j" path="res://Themes/Blue/Tab/TabSelects.tres" id="7_2tra5"]
+[ext_resource type="StyleBox" uid="uid://c8ks62b0g7luy" path="res://Themes/Blue/LineEdit/LineDisable.tres" id="9_u67sj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tat47"]
 bg_color = Color(1.0834918, 1.0921818, 1.1008717, 1)
@@ -30,11 +33,16 @@ corner_radius_top_right = 8
 bg_color = Color(0.685525, 0.8157112, 0.99999994, 1)
 
 [resource]
+Button/colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
 Button/styles/disabled = ExtResource("1_cp01n")
 Button/styles/focus = ExtResource("1_vuwmy")
 Button/styles/hover = ExtResource("1_jg8oq")
 Button/styles/normal = ExtResource("1_vuwmy")
 Button/styles/pressed = ExtResource("1_vuwmy")
+ErrorPanel/base_type = &"PanelContainer"
+ErrorPanel/styles/panel = ExtResource("4_t107i")
+ErrorPanelC/base_type = &"PanelContainer"
+ErrorPanelC/styles/panel = ExtResource("4_t107i")
 FoldableContainer/colors/collapsed_font_color = Color(0.11764706, 0.16078432, 0.23137255, 1)
 FoldableContainer/colors/font_color = Color(0.11764706, 0.16078432, 0.23137255, 1)
 FoldableContainer/colors/font_outline_color = Color(0.11764706, 0.16078432, 0.23137255, 1)
@@ -45,6 +53,10 @@ FoldableContainer/styles/title_collapsed_hover_panel = ExtResource("4_xa2bb")
 FoldableContainer/styles/title_collapsed_panel = ExtResource("4_xa2bb")
 FoldableContainer/styles/title_hover_panel = ExtResource("6_1tq2f")
 FoldableContainer/styles/title_panel = SubResource("StyleBoxFlat_tat47")
+LineEdit/colors/font_color = Color(0.11764706, 0.16078432, 0.23137255, 1)
+LineEdit/styles/focus = ExtResource("7_1i7hc")
+LineEdit/styles/normal = ExtResource("4_r5686")
+LineEdit/styles/read_only = ExtResource("9_u67sj")
 Panel/styles/panel = ExtResource("4_r5686")
 PanelContainer/styles/panel = ExtResource("4_r5686")
 PopupMenu/colors/font_color = Color(0.11764706, 0.16078432, 0.23137255, 1)

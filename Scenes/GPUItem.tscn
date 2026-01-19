@@ -5,6 +5,7 @@
 [node name="GPUItem" type="PanelContainer"]
 offset_right = 200.0
 offset_bottom = 66.0
+mouse_filter = 2
 script = ExtResource("1_y2krf")
 
 [node name="Editing" type="ColorRect" parent="."]

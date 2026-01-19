@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://5mltb35dt8sy"]
+[gd_scene load_steps=5 format=3 uid="uid://5mltb35dt8sy"]
 
 [ext_resource type="Script" uid="uid://dwc5hj6a8q1jh" path="res://Code/LeftTabView.gd" id="1_3lj8n"]
-[ext_resource type="PackedScene" uid="uid://boxqa4tpeslwf" path="res://Scenes/GPUItem.tscn" id="1_k1b33"]
 [ext_resource type="Script" uid="uid://bb0r67x4jp7nn" path="res://Code/GPUInfoScrollView.gd" id="3_05qss"]
 [ext_resource type="Script" uid="uid://cov5jik35fvxn" path="res://Code/MoneyScrollView.gd" id="4_hukiw"]
 [ext_resource type="Script" uid="uid://cx6r2kl1pghxb" path="res://Code/MainBoardInfo.gd" id="5_twour"]
 
-[node name="Panel" type="Panel"]
+[node name="LeftTabView" type="Panel"]
 custom_minimum_size = Vector2(280, 0)
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -21,10 +20,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 0
 
 [node name="显卡" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 tooltip_text = "当前仓库内所持有的显卡"
 metadata/_tab_index = 0
@@ -62,12 +60,6 @@ theme_override_constants/margin_right = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/显卡/GPUVSplit/GPUListScrollView/VBoxContainer/CardPut"]
 layout_mode = 2
 
-[node name="PanelContainer" parent="TabContainer/显卡/GPUVSplit/GPUListScrollView/VBoxContainer/CardPut/VBoxContainer" instance=ExtResource("1_k1b33")]
-layout_mode = 2
-
-[node name="PanelContainer2" parent="TabContainer/显卡/GPUVSplit/GPUListScrollView/VBoxContainer/CardPut/VBoxContainer" instance=ExtResource("1_k1b33")]
-layout_mode = 2
-
 [node name="GPUInfoScrollView" type="ScrollContainer" parent="TabContainer/显卡/GPUVSplit"]
 layout_mode = 2
 scroll_deadzone = 10
@@ -89,7 +81,7 @@ text = "GPUNAME"
 [node name="Hashrate" type="Label" parent="TabContainer/显卡/GPUVSplit/GPUInfoScrollView/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"Title"
-text = "算力: --MH/S"
+text = "算力: --MH/s"
 
 [node name="Power" type="Label" parent="TabContainer/显卡/GPUVSplit/GPUInfoScrollView/VBoxContainer"]
 layout_mode = 2
@@ -114,6 +106,7 @@ theme_type_variation = &"Title"
 text = "体质: --"
 
 [node name="资金" type="Control" parent="TabContainer"]
+visible = false
 layout_mode = 2
 tooltip_text = "资金流向"
 metadata/_tab_index = 1

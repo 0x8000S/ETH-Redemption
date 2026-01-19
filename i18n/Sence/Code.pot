@@ -1,0 +1,121 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ETH的救赎\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+msgid "核心+%sMhz"
+msgstr ""
+
+
+msgid "显存+%sMHz"
+msgstr ""
+
+msgid "电压-%smv"
+msgstr ""
+
+msgid "道具%s"
+msgstr ""
+
+msgid "场地%s"
+msgstr ""
+
+msgid "基础算力: %sMH/s\nTDP: %sW\n显存: %sG\n定价: ￥%s"
+msgstr ""
+
+msgid "当月挖去ETH: %s"
+msgstr ""
+
+msgid "消耗电源 %sW"
+msgstr ""
+
+msgid "电费: ￥%s"
+msgstr ""
+
+msgid "算力: %.2fMH/s"
+msgstr ""
+
+msgid "功耗: %sW"
+msgstr ""
+
+msgid "健康度: %.3f"
+msgstr ""
+
+msgid "老化系数: %.3f"
+msgstr ""
+
+msgid "体质: %s"
+msgstr ""
+
+msgid "算力: --MH/s"
+msgstr ""
+
+msgid "功耗: --W"
+msgstr ""
+
+msgid "健康度: --"
+msgstr ""
+
+msgid "老化系数: --"
+msgstr ""
+
+msgid "体质: --"
+msgstr ""
+
+msgid "满了"
+msgstr ""
+
+msgid "显卡插槽已被使用殆尽"
+msgstr ""
+
+msgid "已装载GPU: %s/%s"
+msgstr ""
+
+msgid "最大支持显卡数: %s"
+msgstr ""
+
+msgid "主板显卡总算力:\n %.2fMH/s"
+msgstr ""
+
+msgid "总功耗: %sW"
+msgstr ""
+
+msgid "显卡名称: %s\n基础算力: %sMh/s\n频率: %sMHz\n显存: %sG\n显存频率: %sGbps\nTDP: %sW\n市场参考价格: ￥%s\n"
+msgstr ""
+
+msgid "存档名不可为空白!"
+msgstr ""
+
+msgid "非法的存档名!"
+msgstr ""
+
+msgid "已有相同每次的存档!"
+msgstr ""
+
+msgid "存档创建成功!"
+msgstr ""
+
+msgid "累计电费: ￥%.2f"
+msgstr ""
+
+msgid "当前持有资金: \n￥%.2f"
+msgstr ""
+
+msgid "当前拥有: %.5f ETH"
+msgstr ""
+
+msgid "当前电价: ￥%.2f"
+msgstr ""
+
+msgid "当前电价: ￥%.2f"
+msgstr ""
+
+msgid "当前持有资金: ￥%s"
+msgstr ""
+
+msgid "\n品质提升 %.2f->%.2f"
+msgstr ""
+
+msgid "已过去%s年%s月%s天%s时 | ￥%s"
+msgstr ""

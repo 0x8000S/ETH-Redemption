@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="ETH的救赎"
-config/version="0.3.0.5"
+config/version="1.0.0.0"
 run/main_scene="uid://cd3bx2qp4ww5u"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1.083958, 1.092553, 1.1011481, 1)
+boot_splash/fullsize=false
+boot_splash/image="uid://bwcgmgfbsee6t"
+config/icon="uid://bwcgmgfbsee6t"
+config/windows_native_icon="res://ICON_W.ico"
 
 [autoload]
 
@@ -30,6 +34,11 @@ window/size/viewport_height=540
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+GPUList=""
+GPUListOnBoard=""
+
 [gui]
 
 theme/default_font_multichannel_signed_distance_field=true
@@ -38,14 +47,19 @@ theme/custom="uid://2t4vbyx0ctbr"
 
 [input]
 
-Reload={
-"deadzone": 0.2,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
-]
-}
 ReloadShop={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+Stop={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+DebugAddMoney={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":46,"key_label":0,"unicode":46,"location":0,"echo":false,"script":null)
 ]
 }
 
@@ -54,6 +68,12 @@ ReloadShop={
 pointing/android/enable_pan_and_scale_gestures=true
 pointing/android/disable_scroll_deadzone=true
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://i18n/en.mo", "res://i18n/zh.mo")
+locale/translations_pot_files=PackedStringArray("res://Scenes/MainView.tscn", "res://Scenes/ErrorMessageBox.tscn", "res://Scenes/GPUBuyCard.tscn", "res://Scenes/GpuInfo.tscn", "res://Scenes/GPUItem.tscn", "res://Scenes/ItemBuyCard.tscn", "res://Scenes/LeftTabView.tscn", "res://Scenes/MainBoard.tscn", "res://Scenes/MainGPUView.tscn", "res://Scenes/MainMenu.tscn", "res://Scenes/MessageBox.tscn", "res://Scenes/OCView.tscn", "res://Scenes/Shop.tscn", "res://Scenes/StopPanel.tscn", "res://Scenes/TimeText.tscn", "res://Scenes/TimeZoom.tscn", "res://Scenes/UiTips.tscn", "res://Scenes/WorldCard.tscn", "res://Code/FinancialReportPanel.gd", "res://Code/GameViews.gd", "res://Code/GpuBuyCard.gd", "res://Code/GpuCard.gd", "res://Code/GpuInfo.gd", "res://Code/GPUInfoScrollView.gd", "res://Code/GPUItem.gd", "res://Code/ItemBuyCard.gd", "res://Code/LeftTabView.gd", "res://Code/MainBoard.gd", "res://Code/MainBoardInfo.gd", "res://Code/MainMenu.gd", "res://Code/MainViewTabContainer.gd", "res://Code/MessageBox.gd", "res://Code/MoneyScrollView.gd", "res://Code/OCView.gd", "res://Code/Shop.gd", "res://Code/StopPanel.gd", "res://Code/TimeText.gd", "res://Code/UiTips.gd", "res://Code/WorldCard.gd")
+locale/fallback=""
 
 [rendering]
 

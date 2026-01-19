@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1kegvnfo88v5"]
+[gd_scene load_steps=13 format=3 uid="uid://b1kegvnfo88v5"]
 
 [ext_resource type="PackedScene" uid="uid://moieoeq8vice" path="res://Scenes/MainBoard.tscn" id="1_2bgbe"]
 [ext_resource type="PackedScene" uid="uid://5mltb35dt8sy" path="res://Scenes/LeftTabView.tscn" id="2_741vi"]
 [ext_resource type="Script" uid="uid://be7i24kgsqa2l" path="res://Code/FinancialReportPanel.gd" id="3_q8rig"]
 [ext_resource type="PackedScene" uid="uid://cb122d7lyvp3f" path="res://Scenes/OCView.tscn" id="3_r56c7"]
 [ext_resource type="PackedScene" uid="uid://ci2gks716kur" path="res://Scenes/TimeText.tscn" id="4_xhqqs"]
+[ext_resource type="Script" uid="uid://bsuvjx8xbs8uq" path="res://Code/StopButton.gd" id="5_f0ira"]
 [ext_resource type="PackedScene" uid="uid://dgoa5ywctduxm" path="res://Scenes/TimeZoom.tscn" id="6_dxu6r"]
+[ext_resource type="PackedScene" uid="uid://rfmp75vsmywl" path="res://Scenes/StopPanel.tscn" id="7_haeru"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jodo8"]
 font_size = 48
@@ -21,13 +23,6 @@ font_color = Color(0.11764706, 0.16078432, 0.23137255, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_haeru"]
 font_size = 32
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxu6r"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [node name="MainView" type="Control"]
 layout_mode = 3
@@ -118,7 +113,6 @@ offset_left = -122.0
 offset_right = 122.0
 offset_bottom = 40.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dxu6r")
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -131,6 +125,12 @@ theme_override_constants/margin_bottom = 8
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 
+[node name="Stop" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "暂停"
+text = "▨"
+script = ExtResource("5_f0ira")
+
 [node name="TimeText" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("4_xhqqs")]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -139,4 +139,8 @@ metadata/_edit_use_anchors_ = true
 [node name="TimeZoom" parent="PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_dxu6r")]
 layout_mode = 2
 
+[node name="StopPanel" parent="." instance=ExtResource("7_haeru")]
+layout_mode = 1
+
 [connection signal="pressed" from="FinancialReport/FinancialReportPanel/MarginContainer/VBoxContainer/Close" to="FinancialReport/FinancialReportPanel" method="WhenCloseButtonClicked"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Stop" to="PanelContainer/MarginContainer/HBoxContainer/Stop" method="WhenStopButtonClicked"]

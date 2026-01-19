@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cd3bx2qp4ww5u"]
 
-[ext_resource type="PackedScene" uid="uid://b1kegvnfo88v5" path="res://Scenes/MainGPUView.tscn" id="1_741vi"]
-[ext_resource type="PackedScene" uid="uid://c2l2fnou7nd7c" path="res://Test/shop.tscn" id="2_37edh"]
+[ext_resource type="Script" uid="uid://bd5754umjsvgl" path="res://Code/GameViews.gd" id="1_g4adj"]
 [ext_resource type="PackedScene" uid="uid://bbvtjro8sh88a" path="res://Scenes/GlobalPrice.tscn" id="4_gq8gf"]
 [ext_resource type="PackedScene" uid="uid://d2kfjxuhroqkn" path="res://Scenes/UiTips.tscn" id="5_gq8gf"]
 [ext_resource type="PackedScene" uid="uid://bh14ys0c3k2yu" path="res://Scenes/VenueManager.tscn" id="5_qssah"]
+[ext_resource type="PackedScene" uid="uid://31kvfek7fcvi" path="res://Scenes/MainMenu.tscn" id="7_ef7gy"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,17 +14,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainView" parent="." instance=ExtResource("1_741vi")]
-layout_mode = 1
-
-[node name="Shop" parent="." instance=ExtResource("2_37edh")]
-visible = false
-layout_mode = 1
-
 [node name="Components" type="Node" parent="."]
 
 [node name="GlobalPrice" parent="Components" instance=ExtResource("4_gq8gf")]
 
 [node name="UiTips" parent="Components" instance=ExtResource("5_gq8gf")]
+z_index = 100
 
 [node name="VenueManager" parent="Components" instance=ExtResource("5_qssah")]
+
+[node name="GameViews" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g4adj")
+
+[node name="MainMenu" parent="." node_paths=PackedStringArray("GameViews") instance=ExtResource("7_ef7gy")]
+layout_mode = 1
+GameViews = NodePath("../GameViews")

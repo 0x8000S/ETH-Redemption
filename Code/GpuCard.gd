@@ -26,44 +26,54 @@ class_name GpuCard
 ##商店价格
 @export var MarketPrice:int
 ##BIOS情况
-var BiosModded = false
+@export_storage var BiosModded = false
 ##核心超频偏移
-var OCCore:float = 0.0
+@export_storage var OCCore:float = 0.0
 ## 显存超频偏移
-var OCMem:float = 0.0
+@export_storage var OCMem:float = 0.0
 ## 降压
-var OffsetVolt:int = 0
+@export_storage var OffsetVolt:int = 0
 ## 体质
-var Quality:float
+@export_storage var Quality:float
 ## 核心超频时影响老化加成
-var OCAgingCoefficient:float = 0.0
+@export_storage var OCAgingCoefficient:float = 0.0
 ## 显存超频时影响老化加成
-var OCMenAgingCoefficient:float = 0.0
+@export_storage var OCMenAgingCoefficient:float = 0.0
 ## 超频时影响耗电
-var OCPowerCoefficient:int = 0
+@export_storage var OCPowerCoefficient:int = 0
 ## 超频过度影响的性能发挥系数
-var PerformanceCoefficient:float = 1.0
+@export_storage var PerformanceCoefficient:float = 1.0
 ## 随机一天暴毙
-var RandomDamage = false
+@export_storage var RandomDamage = false
 ## 寿命=0暴毙
-var Old:float = 1.0
+@export_storage var Old:float = 1.0
 ## 暴毙bool变量
-var Broken:bool = false
+@export_storage var Broken:bool = false
 ## 核心最大超频数值
-var OCCoreLimit = CoreBoost * (0.08 + Quality * 0.07)
-var OCCoreRedLimit = CoreBoost * (0.08 + Quality * 0.1)
+@export_storage var OCCoreLimit = CoreBoost * (0.08 + Quality * 0.07)
+@export_storage var OCCoreRedLimit = CoreBoost * (0.08 + Quality * 0.1)
 ## 显存最大超频数值
-var OCMenLimit = MenBoost * (Global.MenSafeMap[VramType] - 0.01 + Quality * 0.02)
-var OCMenRedLimit = MenBoost * (Global.MenRedMap[VramType] - 0.01 + Quality * 0.02)
+@export_storage var OCMenLimit = MenBoost * (Global.MenSafeMap[VramType] - 0.01 + Quality * 0.02)
+@export_storage var OCMenRedLimit = MenBoost * (Global.MenRedMap[VramType] - 0.01 + Quality * 0.02)
 ## 最大降压
-var OVLimit = 150 * Quality
+@export_storage var OVLimit = 150 * Quality
 ## 工作时间
-var WorkHours:int = 0
-var OnBoard = false
-var OverLineCore = false
-var OverLineMen = false
-var Edit:bool = false
+@export_storage var WorkHours:int = 0
+@export_storage var OnBoard = false
+@export_storage var OverLineCore = false
+@export_storage var OverLineMen = false
+@export_storage var Edit:bool = false
+var Vars = [Model, BaseHashrate, DefaultPower, MaxQuality, MinQuality, CoreBoost, MenBoost, Vram, VramType, LHR, Health, MarketPrice, BiosModded, OCCore, OCMem, OffsetVolt, Quality, OCAgingCoefficient, OCMenAgingCoefficient, OCPowerCoefficient, PerformanceCoefficient, RandomDamage, Old, Broken, OCCoreLimit, OCCoreRedLimit, OCMenLimit, OCMenRedLimit, OVLimit, WorkHours, OnBoard, OverLineCore, OverLineMen, Edit]
 
+
+func _ready() -> void:
+	add_to_group("GPUList")
+
+func SetGroup(GroupName:String):
+	var groups = ["GPUList", "GPUBuy", "GPUListOnBoard"]
+	for i in groups:
+		remove_from_group(i)
+	add_to_group(GroupName)
 ## 超频完成后调用
 func CalcOcLimit():
 	OCCoreLimit = CoreBoost * (0.08 + Quality * 0.07)
@@ -119,12 +129,19 @@ func GetHashrate() -> float:
 ## 获取功耗
 func GetPower() -> int:
 	var power:int = int(DefaultPower * (1 - (OCMem/4000) * 0.1 + (OCCore/2000) * 0.15 - (float(OffsetVolt)/150) * 0.12)) + OCPowerCoefficient + 10-Old*10
-	if OnBoard and Global.MainBoardPowerState:
+	if OnBoard and Global.MainBoardPowerState and Broken == false:
 		power += randi_range(1, 8)
-	if not Global.HasItems.has(Global.Items.GetPower):
+	if not Global.HasItems.has(Global.Items.GetPower) and OnBoard and not Global.MainBoardPowerState:
 		return 0
 	return power
 
 func Aging():
-	Old = maxf(Old-(0.001*Quality+0.001+Old*0.002), 0)
+	Old = maxf(Old-(0.002*Quality+0.004+Old*0.004), 0)
 	Health = maxf(Health-(0.001*Quality+(OCMenAgingCoefficient+OCAgingCoefficient)*0.002+0.001), 0.1)
+
+func Init(sours:Array):
+	for i in Vars:
+		i = sours
+
+func GetData() -> Array:
+	return [Model, BaseHashrate, DefaultPower, MaxQuality, MinQuality, CoreBoost, MenBoost, Vram, VramType, LHR, Health, MarketPrice, BiosModded, OCCore, OCMem, OffsetVolt, Quality, OCAgingCoefficient, OCMenAgingCoefficient, OCPowerCoefficient, PerformanceCoefficient, RandomDamage, Old, Broken, OCCoreLimit, OCCoreRedLimit, OCMenLimit, OCMenRedLimit, OVLimit, WorkHours, OnBoard, OverLineCore, OverLineMen, Edit]

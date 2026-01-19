@@ -1,0 +1,336 @@
+[gd_scene load_steps=4 format=3 uid="uid://31kvfek7fcvi"]
+
+[ext_resource type="Script" uid="uid://cmd1mn3bs6h16" path="res://Code/MainMenu.gd" id="1_853f1"]
+[ext_resource type="PackedScene" uid="uid://dqyn8bwihnil0" path="res://Scenes/SaveLoadNode.tscn" id="2_8saeu"]
+[ext_resource type="Script" uid="uid://bs4j8h7lba0ov" path="res://Code/MainViewTabContainer.gd" id="2_ghw46"]
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("SaveNode")]
+process_mode = 3
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_853f1")
+SaveNode = NodePath("SaveLoadNode")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 180
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_type_variation = &"Title"
+theme_override_font_sizes/font_size = 48
+text = "ETH的救赎"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NewWord" type="Button" parent="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "新存档"
+
+[node name="LoadWord" type="Button" parent="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "载入存档"
+
+[node name="Info" type="Button" parent="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "信息"
+
+[node name="TranslationChanged" type="OptionButton" parent="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "中文"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+
+[node name="Exit" type="Button" parent="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "退出"
+
+[node name="TabViews" type="Control" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="Panel/HBoxContainer/TabViews" node_paths=PackedStringArray("SaveNode")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+script = ExtResource("2_ghw46")
+SaveNode = NodePath("../../../../SaveLoadNode")
+
+[node name="NewWord" type="Control" parent="Panel/HBoxContainer/TabViews/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/TabViews/TabContainer/NewWord"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.03731343
+anchor_right = 1.0
+anchor_bottom = 0.12064676
+offset_bottom = 22.333334
+grow_horizontal = 2
+theme_type_variation = &"Title"
+theme_override_font_sizes/font_size = 48
+text = "新建存档"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/NewWord"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -23.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/NewWord/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/TabViews/TabContainer/NewWord/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Title"
+theme_override_font_sizes/font_size = 34
+text = "存档名： "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/HBoxContainer/TabViews/TabContainer/NewWord/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+
+[node name="Create" type="Button" parent="Panel/HBoxContainer/TabViews/TabContainer/NewWord"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -65.0
+offset_right = -33.0
+offset_bottom = -29.083344
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "新建"
+metadata/_edit_use_anchors_ = true
+
+[node name="LoadWrold" type="Control" parent="Panel/HBoxContainer/TabViews/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/LoadWrold"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/LoadWrold/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/TabViews/TabContainer/LoadWrold/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_type_variation = &"Title"
+theme_override_font_sizes/font_size = 48
+text = "载入存档"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/LoadWrold/VBoxContainer"]
+custom_minimum_size = Vector2(0, 430)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/LoadWrold/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/LoadWrold/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/LoadWrold/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="InfoGpu" type="Control" parent="Panel/HBoxContainer/TabViews/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_type_variation = &"Title"
+theme_override_font_sizes/font_size = 48
+text = "显卡信息"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 430)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer/MarginContainer/HBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer/MarginContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer/MarginContainer/HBoxContainer/Panel/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Info" type="Label" parent="Panel/HBoxContainer/TabViews/TabContainer/InfoGpu/VBoxContainer/MarginContainer/HBoxContainer/Panel/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"Title"
+theme_override_font_sizes/font_size = 24
+text = "显卡名称: --
+基础算力: --
+频率: --
+显存: --
+显存频率: --
+TDP: --
+市场参考价格: ￥--
+
+"
+autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="Panel/HBoxContainer/TabViews"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9471994, 0.9471994, 0.9471994, 1)
+
+[node name="SaveLoadNode" parent="." instance=ExtResource("2_8saeu")]
+process_mode = 3
+
+[connection signal="pressed" from="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer/NewWord" to="." method="WhenNewWordButtonClicked"]
+[connection signal="pressed" from="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer/LoadWord" to="." method="WhenLoadButtonClicked"]
+[connection signal="pressed" from="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer/Info" to="." method="WhenInfoButtonClicked"]
+[connection signal="item_selected" from="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer/TranslationChanged" to="." method="WhenTranslationChangedIitemSelected"]
+[connection signal="pressed" from="Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer/Exit" to="." method="WhenExitButtonClikced"]
+[connection signal="pressed" from="Panel/HBoxContainer/TabViews/TabContainer/NewWord/Create" to="Panel/HBoxContainer/TabViews/TabContainer" method="WhenCreateButtonClicked"]

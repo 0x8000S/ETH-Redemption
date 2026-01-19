@@ -5,6 +5,7 @@
 [node name="ItemBuyCard" type="PanelContainer" node_paths=PackedStringArray("ItemName", "ItemPrice", "BuyButton")]
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 script = ExtResource("1_bo1fa")
 ItemName = NodePath("MarginContainer/VBoxContainer/ItemName")
 ItemPrice = NodePath("MarginContainer/VBoxContainer/ItemSellPrice")

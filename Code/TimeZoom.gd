@@ -1,12 +1,14 @@
 extends HBoxContainer
 
 @onready var ZoomText = $MainPanel/MarginContainer/Zoom
-var TimeZoomValue:Array[float] = [0.5, 1.0, 2.0, 3.0, 4.0, 5.0]
+var TimeZoomValue:Array[float] = [0.5, 1.0, 2.0, 3.0, 4.0, 8.0, 10.0]
 var index = 1
 
-func _ready() -> void:
-	pass
-
+func SyncTimeZoomValue():
+	$State.text = "○"
+	TimeNode.HoursTimer.start()
+	index = TimeZoomValue.find(Global.ZoomValue)
+	ZoomText.text = "x %s" % TimeZoomValue[index]
 
 func WhenLessButtonClicked() -> void:
 	if index != 0:
@@ -30,3 +32,5 @@ func WhenStateButtonClicked() -> void:
 		$State.text = "●"
 		TimeNode.HoursTimer.stop()
 
+func _ready() -> void:
+	SignalNode.SyncTimeZoomValue.connect(SyncTimeZoomValue)

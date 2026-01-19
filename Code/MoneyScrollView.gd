@@ -11,13 +11,13 @@ func UpdataETHMoney(p:float):
 	NowETH = p * 6.14
 
 func Updata():
-	Ebt.text = "累计电费: ￥%.2f" % Global.ElectricityPriceCount
-	Cm.text = "当前持有资金: \n￥%.2f" % Global.Money
-	Have.text = str("当前拥有: %.5f ETH" % Global.ETHMoney)
-	Cbt.text = "当前电价: ￥%.2f" % Global.ElectricityPrice
+	Ebt.text = tr("累计电费: ￥%.2f") % Global.ElectricityPriceCount
+	Cm.text = tr("当前持有资金: \n￥%.2f") % Global.Money
+	Have.text = str(tr("当前拥有: %.5f ETH") % Global.ETHMoney)
+	Cbt.text = tr("当前电价: ￥%.2f") % Global.ElectricityPrice
 
 func _ready() -> void:
-	Cbt.text = "当前电价: ￥%.2f" % Global.ElectricityPrice
+	Cbt.text = tr("当前电价: ￥%.2f") % Global.ElectricityPrice
 	SignalNode.PriceChanged.connect(UpdataETHMoney)
 
 func _process(delta: float) -> void:

@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://8e5avlkraf62" path="res://Code/GpuBuyCard.gd" id="1_lhlp1"]
 
-[node name="GPUCARD" type="PanelContainer"]
+[node name="GPUCARD" type="PanelContainer" groups=["GPUBuy"]]
+mouse_filter = 2
 script = ExtResource("1_lhlp1")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
