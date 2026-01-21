@@ -4,9 +4,10 @@ extends Control
 @export var SaveNode:SaveLoadNode
 @onready var TabView:TabContainer = $Panel/HBoxContainer/TabViews/TabContainer
 @onready var TranslationChanged = $Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer/TranslationChanged
-
+@onready var VersionText = $Panel/HBoxContainer/MarginContainer3/VBoxContainer/MarginContainer/VBoxContainer/Version
 
 func _ready() -> void:
+	VersionText.text = "V %s" % ProjectSettings.get_setting("application/config/version")
 	print(OS.get_locale())
 	TabView.scale = Vector2(0, 0)
 	SignalNode.LoadWorld.connect(LoadNewWorldEvent)
